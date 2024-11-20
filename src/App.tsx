@@ -1,36 +1,19 @@
-import styled from "styled-components";
-import GlobalStyles from "./styles/GlobalStyles";
-import Button from "./ui/Button";
-import Heading from "./ui/Heading";
-import Input from "./ui/Input";
-import Row from "./ui/Row";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
+import Dashboard from "./pages/Dashboard"
 
-const StyledApp = styled.main`
-  padding: 20px;
-`;
-
-export default function App() {
+function App() {
   return (
-    <>
-      <GlobalStyles />
-      <StyledApp>
-        <Row as="horizontal">
-          <Heading as="h1">The Wild Oasis</Heading>
-          <div>
-            <Heading as="h2">Check in and out</Heading>
-            <Button onClick={() => alert("Hello")}>Check</Button>
-            <Button onClick={() => alert("Check out")}>Check out</Button>
-          </div>
-        </Row>
-
-        <Row as="vertical">
-          <Heading as="h3">Form</Heading>
-          <form>
-            <Input type="number" placeholder="Number" />
-            <Input type="number" placeholder="Number" />
-          </form>
-        </Row>
-      </StyledApp>
-    </>
-  );
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Navigate replace to="dashboard" />} />
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="dashboard" element={<Dashboard />} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
+
+export default App
