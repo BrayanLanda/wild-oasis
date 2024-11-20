@@ -6,20 +6,20 @@ const Row = styled.div`
   ${(props) =>
     props.typeof === "horizontal" &&
     css`
-        justify-content: : space-between;
-        align-items: center;
+      justify-content: space-between;
+      align-items: center;
     `}
 
   ${(props) =>
     props.typeof === "vertical" &&
     css`
-        flex-direction: column;
-        gap: 1.6rem;
+      flex-direction: column;
+      gap: 1.6rem;
     `}
 `;
 
 Row.defaultProps = {
-  typeof: "vertical"
-}
+  typeof: "vertical",
+};
 
 export default Row;
