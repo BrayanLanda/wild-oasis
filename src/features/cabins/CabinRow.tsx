@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { formatCurrency } from "../../utils/helpers";
+import { CabinOne } from "./types/cabin";
 
 const TableRow = styled.div`
   display: grid;
@@ -40,7 +41,10 @@ const Discount = styled.div`
   color: var(--color-green-700);
 `;
 
-function CabinRow({ cabin }) {
+type CabinProps = {
+  cabin: CabinOne
+}
+function CabinRow({ cabin }: CabinProps) {
   // const { isDeleting, deleteCabin } = useDeleteCabin();
   // const { isCreating, createCabin } = useCreateCabin();
   const {
